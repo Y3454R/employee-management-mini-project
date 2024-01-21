@@ -16,5 +16,8 @@ To run the client:
   cd client
   npm start
   ```
-
-![employee list](https://github.com/Y3454R/project/blob/main/employee_list.png)
+#### Employee List
+![employee list](https://github.com/Y3454R/project/blob/main/employees.png)
+<br>
+#### Employee Profile Page
+![employee profile](https://github.com/Y3454R/project/blob/main/employee-profile.png)

@@ -5,4 +5,6 @@ const router = Router();
 
 router.get("/", controller.getEmployees);
 
+router.get("/:id", controller.getEmployeeById);
+
 module.exports = router;

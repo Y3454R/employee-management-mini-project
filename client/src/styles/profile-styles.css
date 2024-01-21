@@ -1,0 +1,32 @@
+/* styles.css */
+
+/* Style for the profile container */
+.profile-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the profile details */
+.profile-details {
+  margin-top: 20px;
+}
+
+/* Style for the edit button */
+.edit-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover effect for the edit button */
+.edit-button:hover {
+  background-color: #0056b3;
+}
