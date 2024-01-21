@@ -9,10 +9,11 @@ const getEmployeeById = "SELECT * FROM employees WHERE id = $1";
 
 // const removeStudent = "DELETE FROM students WHERE id = $1";
 
-// const updateStudent =
-//   "UPDATE students SET name = $1, email = $2, age = $3, dob = $4  WHERE id = $5";
+const updateEmployee =
+  "UPDATE employees SET name = $1, email = $2, position = $3 WHERE id = $4";
 
 module.exports = {
   getEmployees,
   getEmployeeById,
+  updateEmployee,
 };

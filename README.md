@@ -18,6 +18,12 @@ To run the client:
   ```
 #### Employee List
 ![employee list](https://github.com/Y3454R/project/blob/main/employees.png)
-<br>
+
 #### Employee Profile Page
-![employee profile](https://github.com/Y3454R/project/blob/main/employee-profile.png)
+![employee profile](https://github.com/Y3454R/project/blob/main/employee-profile-page.png)
+
+#### Employee Profile Edit Page
+![employee profile edit](https://github.com/Y3454R/project/blob/main/edit-employee-info-page.png)
+
+#### Employee Profile Page After Editing
+![employee-profile-page-after-edit](https://github.com/Y3454R/project/blob/main/employee-profile-page-after-edit.png)

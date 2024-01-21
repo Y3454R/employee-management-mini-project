@@ -7,4 +7,6 @@ router.get("/", controller.getEmployees);
 
 router.get("/:id", controller.getEmployeeById);
 
+router.put("/:id", controller.updateEmployee);
+
 module.exports = router;

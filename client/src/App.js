@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import EmployeeList from "./pages/EmployeeList";
 import EmployeeProfile from "./pages/EmployeeProfile";
+import EditEmployee from "./pages/EditEmployee";
 
 const App = () => {
   return (
@@ -13,6 +14,9 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/employees" element={<EmployeeList />} />
         <Route path="/employee/:id" element={<EmployeeProfile />} />
+        <Route path="/:id/edit" element={<EditEmployee />} />
+        {/* <Route path="/edit/:id" element={EditEmployee} />{" "} */}
+        {/* New route for editing */}
       </Routes>
     </Router>
   );

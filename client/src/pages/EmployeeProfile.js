@@ -1,11 +1,12 @@
 // EmployeeProfile.js
 
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "../styles/profile-styles.css";
 
 const EmployeeProfile = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [employee, setEmployee] = useState(null);
 
   useEffect(() => {
@@ -25,7 +26,10 @@ const EmployeeProfile = () => {
   }, [id]);
 
   const handleEditClick = () => {
-    console.log("Edit button clicked for employee ID:", id);
+    // console.log("Edit button clicked for employee ID:", id);
+
+    // Navigate to the edit page with the employee ID
+    navigate(`/${id}/edit`);
   };
 
   if (!employee) {
