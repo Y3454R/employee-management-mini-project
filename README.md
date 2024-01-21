@@ -23,7 +23,7 @@ To run the client:
 ![employee profile](https://github.com/Y3454R/project/blob/main/Screenshots/employee-profile-page.png)
 
 #### Employee Profile Edit Page
-![employee profile edit](https://github.com/Y3454R/project/blob/Screenshots/main/edit-employee-info-page.png)
+![employee profile edit](https://github.com/Y3454R/project/blob/main/Screenshots/edit-employee-info-page.png)
 
 #### Employee Profile Page After Editing
 ![employee-profile-page-after-edit](https://github.com/Y3454R/project/blob/main/Screenshots/employee-profile-page-after-edit.png)
