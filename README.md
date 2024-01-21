@@ -1,3 +1,4 @@
+Fetch a backend API and show all the employees. <br>
 To make the project ready:
 * npm
   ```sh
