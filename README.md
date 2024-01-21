@@ -17,13 +17,13 @@ To run the client:
   npm start
   ```
 #### Employee List
-![employee list](https://github.com/Y3454R/project/blob/main/employees.png)
+![employee list](https://github.com/Y3454R/project/blob/main/Screenshots/employees.png)
 
 #### Employee Profile Page
-![employee profile](https://github.com/Y3454R/project/blob/main/employee-profile-page.png)
+![employee profile](https://github.com/Y3454R/project/blob/main/Screenshots/employee-profile-page.png)
 
 #### Employee Profile Edit Page
-![employee profile edit](https://github.com/Y3454R/project/blob/main/edit-employee-info-page.png)
+![employee profile edit](https://github.com/Y3454R/project/blob/Screenshots/main/edit-employee-info-page.png)
 
 #### Employee Profile Page After Editing
-![employee-profile-page-after-edit](https://github.com/Y3454R/project/blob/main/employee-profile-page-after-edit.png)
+![employee-profile-page-after-edit](https://github.com/Y3454R/project/blob/main/Screenshots/employee-profile-page-after-edit.png)
