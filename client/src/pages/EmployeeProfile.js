@@ -26,10 +26,36 @@ const EmployeeProfile = () => {
   }, [id]);
 
   const handleEditClick = () => {
-    // console.log("Edit button clicked for employee ID:", id);
-
     // Navigate to the edit page with the employee ID
     navigate(`/${id}/edit`);
+  };
+
+  const handleRemoveClick = async () => {
+    try {
+      const response = await fetch(`/api/v1/employees/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        console.log("Employee removed successfully!");
+        // Navigate to the employees list page with a success message
+        navigate("/employees", {
+          state: { successMessage: "Employee removed successfully!" },
+        });
+      } else {
+        console.error("Error removing employee:", response.statusText);
+        // Navigate to the employees list page with an error message
+        navigate("/employees", {
+          state: { errorMessage: "Failed to remove employee." },
+        });
+      }
+    } catch (error) {
+      console.error("Error removing employee:", error.message);
+      // Navigate to the employees list page with an error message
+      navigate("/employees", {
+        state: { errorMessage: "Failed to remove employee." },
+      });
+    }
   };
 
   if (!employee) {
@@ -54,9 +80,14 @@ const EmployeeProfile = () => {
         </div>
         {/* Add more details as needed */}
       </div>
-      <button onClick={handleEditClick} className="edit-button">
-        Edit Profile
-      </button>
+      <div>
+        <button onClick={handleEditClick} className="edit-button">
+          Edit
+        </button>
+        <button onClick={handleRemoveClick} className="remove-button">
+          Remove
+        </button>
+      </div>
     </div>
   );
 };

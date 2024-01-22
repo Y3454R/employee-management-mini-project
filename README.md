@@ -27,3 +27,6 @@ To run the client:
 
 #### Employee Profile Page After Editing
 ![employee-profile-page-after-edit](https://github.com/Y3454R/project/blob/main/Screenshots/employee-profile-page-after-edit.png)
+
+#### Employee Profile Page After Editing
+![employee-profile-page-after-edit](https://github.com/Y3454R/project/blob/main/Screenshots/add-employee.png)

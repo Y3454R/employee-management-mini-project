@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import EmployeeList from "./pages/EmployeeList";
 import EmployeeProfile from "./pages/EmployeeProfile";
 import EditEmployee from "./pages/EditEmployee";
+import AddEmployee from "./pages/AddEmployee";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/employees" element={<EmployeeList />} />
         <Route path="/employee/:id" element={<EmployeeProfile />} />
         <Route path="/:id/edit" element={<EditEmployee />} />
+        <Route path="/employees/add" element={<AddEmployee />} />
         {/* <Route path="/edit/:id" element={EditEmployee} />{" "} */}
         {/* New route for editing */}
       </Routes>
