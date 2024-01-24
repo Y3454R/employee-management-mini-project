@@ -1,12 +1,15 @@
 // EditEmployee.js
 
 import React, { useState, useEffect } from "react";
+import { useAuth } from "../AuthContext";
 import { useParams, useNavigate } from "react-router-dom";
 
 import "../styles/edit-styles.css";
 
 const EditEmployee = () => {
   const { id } = useParams();
+
+  const { authToken } = useAuth();
 
   const navigate = useNavigate();
 
@@ -17,12 +20,29 @@ const EditEmployee = () => {
   });
 
   useEffect(() => {
-    // Fetch employee data based on the ID
-    fetch(`/api/v1/employees/${id}`)
-      .then((response) => response.json())
-      .then((data) => setEmployee(data[0]))
-      .catch((error) => console.error("Error fetching employee data:", error));
-  }, [id]);
+    const fetchEmployeeData = async () => {
+      try {
+        const response = await fetch(`/api/v1/employees/${id}`, {
+          headers: {
+            Authorization: `Bearer ${authToken}`, // Include the authentication token
+          },
+        });
+        const data = await response.json();
+
+        // Use data[0] to access the employee object in the array
+        setEmployee(data[0]);
+      } catch (error) {
+        console.error("Error fetching employee data:", error);
+
+        // If unauthorized, redirect to login page or handle authentication error
+        if (error.response && error.response.status === 401) {
+          navigate("/login");
+        }
+      }
+    };
+
+    fetchEmployeeData();
+  }, [id, authToken, navigate]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,15 +55,13 @@ const EditEmployee = () => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${authToken}`,
       },
       body: JSON.stringify(employee),
     })
       .then((response) => response.text())
       .then((message) => {
         console.log(message);
-        // // Redirect to the employee list page after successful update
-        // history.push('/employees');
-        // Redirect to the employee profile page after successful update
         navigate(`/employee/${id}`);
       })
       .catch((error) => console.error("Error updating employee:", error));

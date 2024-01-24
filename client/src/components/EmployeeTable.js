@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../AuthContext";
 import "../styles/table-styles.css";
 
 const EmployeeTable = () => {
+  const { authToken } = useAuth();
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/v1/employees/");
+        const response = await fetch("/api/v1/employees/", {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+            "Content-Type": "application/json",
+          },
+        });
         const data = await response.json();
         setEmployees(data);
       } catch (error) {
@@ -17,8 +24,7 @@ const EmployeeTable = () => {
     };
 
     fetchData();
-  }, []);
-
+  }, [authToken]);
   return (
     <div>
       <table>

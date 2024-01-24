@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
 import "../styles/edit-styles.css";
 
 const AddEmployee = () => {
   const navigate = useNavigate();
+  const { authToken } = useAuth();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,28 +25,24 @@ const AddEmployee = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${authToken}`,
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        // Add logic for successful submission
         console.log("Employee added successfully!");
-        // Navigate to "/employees" with a success message
         navigate("/employees", {
           state: { successMessage: "Employee added successfully!" },
         });
       } else {
-        // Add logic for unsuccessful submission
         console.error("Error adding employee:", response.statusText);
-        // Navigate to "/employees" with an error message
         navigate("/employees", {
           state: { errorMessage: "Failed to add employee." },
         });
       }
     } catch (error) {
       console.error("Error adding employee:", error.message);
-      // Navigate to "/employees" with an error message
       navigate("/employees", {
         state: { errorMessage: "Failed to add employee." },
       });
@@ -85,7 +83,6 @@ const AddEmployee = () => {
             required
           />
         </label>
-        {/* Add more input fields for additional information */}
         <button type="submit">Add Employee</button>
       </form>
     </div>

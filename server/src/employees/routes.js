@@ -1,16 +1,17 @@
 const { Router } = require("express");
 const controller = require("./controller");
+const authenticateToken = require("../authenticate/authenticateToken");
 
 const router = Router();
 
-router.get("/", controller.getEmployees);
+router.get("/", authenticateToken, controller.getEmployees);
 
-router.get("/:id", controller.getEmployeeById);
+router.get("/:id", authenticateToken, controller.getEmployeeById);
 
-router.post("/", controller.addEmployee);
+router.post("/", authenticateToken, controller.addEmployee);
 
-router.put("/:id", controller.updateEmployee);
+router.put("/:id", authenticateToken, controller.updateEmployee);
 
-router.delete("/:id", controller.removeEmployee);
+router.delete("/:id", authenticateToken, controller.removeEmployee);
 
 module.exports = router;
