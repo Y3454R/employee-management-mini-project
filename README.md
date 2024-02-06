@@ -1,7 +1,7 @@
 * Employee list <br>
 * Add, remove employee <br>
 * backend: Node.js<br>
-* frontend: React<br>
+* frontend: React<br><br><br>
 To make the project ready:
 
 - npm
