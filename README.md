@@ -1,4 +1,7 @@
-Fetch a backend API and show all the employees. <br>
+* Employee list <br>
+* Add, remove employee <br>
+* backend: Node.js<br>
+* frontend: React<br>
 To make the project ready:
 
 - npm
